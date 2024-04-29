@@ -1,0 +1,39 @@
+body {
+    font-family: 'Noto Sans';
+}
+
+.header {
+    display: flex;
+    width: 1920px;
+    height: 90px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.logo1 {
+    margin-left: 91px;
+    font-size: 38px;
+    font-weight: bold;
+    color: #4B82D8;
+}
+
+.logo2 {
+    font-size: 38px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #4B82D8;
+    border-radius: 50px;
+    width: 58px;
+    height: 58px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome {
+    font-size: 24px;
+    font-weight: bold;
+    color: #656565;
+    margin-left: 400px;
+}
