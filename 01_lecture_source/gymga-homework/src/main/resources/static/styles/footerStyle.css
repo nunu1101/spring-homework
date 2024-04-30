@@ -1,0 +1,12 @@
+.footer {
+    display: flex;
+    width: 1820px;
+    height: 70px;
+    align-items: center;
+    margin: 0 auto;
+    background: palevioletred;
+}
+
+.about {
+    margin-left: 99px;
+}
