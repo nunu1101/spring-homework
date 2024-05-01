@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="result-box">
+        <c:choose>
+            <c:when test="${empty_findId}">
+                <p class="inquiry">조회 결과가 없습니다.</p>
+            </c:when>
+            <c:otherwise>
+                <p>${findId.userId}</p>
+            </c:otherwise>
+        </c:choose>
+    </div>
+</body>
+</html>

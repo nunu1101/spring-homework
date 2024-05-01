@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>아이디 찾기</h1>
+    <form th:action="@{/auth/find}" th:method="post">
+        이름 : <input type="text" name="userName">
+        전화번호 : <input type="number" name="userPhone">
+        <button>아이디 찾기</button>
+    </form>
+</body>
+</html>
