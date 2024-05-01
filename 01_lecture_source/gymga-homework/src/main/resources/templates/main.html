@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Welcome to GymGa</title>
@@ -13,7 +13,28 @@
         <p class="logo1">Gym</p>
         <p class="logo2">家</p>
         <p class="welcome">환영합니다, 윤수빈 대표님!</p>
+
+        <div sec:authorize="hasAnyAuthority('대표')">
+            <h1>=== 대표 페이지 ===</h1>
+        </div>
+        <div sec:authorize="hasAnyAuthority('직원')">
+            <h1>=== 직원 페이지 ===</h1>
+        </div>
+
+        <div>
+            <h1>Login</h1>
+            <a href="auth/login">로그인</a>
+            <a href="admin/signup">회원가입</a>
+            <form th:action="@{/auth/logout}" th:method="post">
+                <button>로그아웃</button>
+            </form>
+        </div>
+        <hr>
+        <a href="admin/page">관리자 페이지</a>
+        <br>
+        <a href="user/page">사용자 페이지</a>
     </div>
+
     <!-- Footer -->
     <div class="footer">
         <p class="about">About</p>

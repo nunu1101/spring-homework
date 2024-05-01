@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.gymgahomework.user.model.dao.UserMapper">
+
+    <resultMap id="login" type="com.ohgiraffers.gymgahomework.user.model.dto.LoginDTO">
+        <id property="userCode" column="USER_CODE"/>
+        <result property="userId" column="USER_ID"/>
+        <result property="userPwd" column="USER_PWD"/>
+        <result property="userName" column="USER_NAME"/>
+        <result property="userRole" column="USER_ROLE"/>
+    </resultMap>
+
+    <select id="findByUserId" resultMap="login">
+        SELECT
+                USER_CODE
+            ,   USER_ID
+            ,   USER_PWD
+            ,   USER_NAME
+            ,   USER_ROLE
+        FROM    USERDB
+        WHERE USER_ID = #{ userId }
+    </select>
+
+    <insert id="regist" parameterType="com.ohgiraffers.gymgahomework.user.model.dto.SignUpDTO">
+        INSERT INTO USERDB
+        (
+            USER_ID
+        ,   USER_PWD
+        ,   USER_NAME
+        ,   USER_PHONE
+        ,   USER_BIRTH
+        ,   USER_ADDRESS
+        ,   USER_ETC
+        ,   USER_ROLE
+        )
+        VALUES
+        (
+            #{ userId }
+        ,   #{ userPwd }
+        ,   #{ userName }
+        ,   #{ userPhone }
+        ,   #{ userBirth }
+        ,   #{ userAddress }
+        ,   #{ userEtc }
+        ,   #{ userRole }
+        )
+    </insert>
+</mapper>

@@ -1,13 +1,13 @@
-package com.ohgiraffers.gymgahomework;
+package com.ohgiraffers.gymgahomework.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GymgaHomeworkApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(GymgaHomeworkApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
