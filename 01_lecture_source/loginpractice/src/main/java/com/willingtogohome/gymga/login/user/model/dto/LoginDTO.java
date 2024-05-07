@@ -1,6 +1,6 @@
-package com.ohgiraffers.gymgahomework.user.model.dto;
+package com.willingtogohome.gymga.login.user.model.dto;
 
-import com.ohgiraffers.gymgahomework.common.UserRole;
+import com.willingtogohome.gymga.login.common.UserRole;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,8 +14,8 @@ public class LoginDTO {
     private String userName;
     private UserRole userRole;
 
-    public LoginDTO() {
-    }
+    public LoginDTO(){}
+
     public LoginDTO(int userCode, String userId, String userPwd, String userName, UserRole userRole) {
         this.userCode = userCode;
         this.userId = userId;
@@ -28,9 +28,9 @@ public class LoginDTO {
         if (this.userRole.getRole().length() > 0) {
             return Arrays.asList(this.userRole.getRole().split(","));
         }
+
         return new ArrayList<>();
     }
-
 
     public int getUserCode() {
         return userCode;

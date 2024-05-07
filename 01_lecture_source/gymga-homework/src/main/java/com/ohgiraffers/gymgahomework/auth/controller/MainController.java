@@ -11,12 +11,12 @@ public class MainController {
         return "main";
     }
 
-    @GetMapping("/admin/page")
+    @GetMapping("/admin/admin")
     public String adminPage(){
         return "/admin/admin";
     }
 
-    @GetMapping("/user/page")
+    @GetMapping("/user/user")
     public String userPage(){
         return "/user/user";
     }

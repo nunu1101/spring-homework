@@ -1,8 +1,8 @@
-package com.ohgiraffers.gymgahomework.user.model.service;
+package com.willingtogohome.gymga.login.user.model.service;
 
-import com.ohgiraffers.gymgahomework.user.model.dao.UserMapper;
-import com.ohgiraffers.gymgahomework.user.model.dto.LoginDTO;
-import com.ohgiraffers.gymgahomework.user.model.dto.SignUpDTO;
+import com.willingtogohome.gymga.login.user.model.dao.UserMapper;
+import com.willingtogohome.gymga.login.user.model.dto.LoginDTO;
+import com.willingtogohome.gymga.login.user.model.dto.RegistDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -18,21 +18,24 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public int regist(SignUpDTO signUpDTO) {
-        signUpDTO.setUserPwd(passwordEncoder.encode(signUpDTO.getUserPwd()));
+    public int regist(RegistDTO registDTO) {
+
+        registDTO.setUserPwd(passwordEncoder.encode(registDTO.getUserPwd()));
 
         int result = 0;
 
         try {
-            result = userMapper.regist(signUpDTO);
+            result = userMapper.regist(registDTO);
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace();;
         }
+
         return result;
     }
 
-
     public LoginDTO findByUserId(String userId) {
+        System.out.println("userId" + userId);
+        System.out.println("userMapper" + userMapper);
         LoginDTO login = userMapper.findByUserId(userId);
 
         if (!Objects.isNull(login)) {

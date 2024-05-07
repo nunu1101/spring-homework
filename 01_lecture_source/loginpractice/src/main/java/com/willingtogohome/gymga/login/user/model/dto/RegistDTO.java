@@ -1,6 +1,6 @@
-package com.ohgiraffers.gymgahomework.user.model.dto;
+package com.willingtogohome.gymga.login.user.model.dto;
 
-public class SignUpDTO {
+public class RegistDTO {
 
     private String userId;
     private String userPwd;
@@ -9,11 +9,15 @@ public class SignUpDTO {
     private String userBirth;
     private String userAddress;
     private String userEtc;
-    private String userRole;
+    private String role;
 
-    public SignUpDTO(){}
+    public RegistDTO(){}
 
-    public SignUpDTO(String userId, String userPwd, String userName, String userPhone, String userBirth, String userAddress, String userEtc, String userRole) {
+    public String getUserId() {
+        return userId;
+    }
+
+    public RegistDTO(String userId, String userPwd, String userName, String userPhone, String userBirth, String userAddress, String userEtc, String role) {
         this.userId = userId;
         this.userPwd = userPwd;
         this.userName = userName;
@@ -21,11 +25,7 @@ public class SignUpDTO {
         this.userBirth = userBirth;
         this.userAddress = userAddress;
         this.userEtc = userEtc;
-        this.userRole = userRole;
-    }
-
-    public String getUserId() {
-        return userId;
+        this.role = role;
     }
 
     public void setUserId(String userId) {
@@ -80,12 +80,12 @@ public class SignUpDTO {
         this.userEtc = userEtc;
     }
 
-    public String getUserRole() {
-        return userRole;
+    public String getRole() {
+        return role;
     }
 
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override
@@ -98,7 +98,7 @@ public class SignUpDTO {
                 ", userBirth='" + userBirth + '\'' +
                 ", userAddress='" + userAddress + '\'' +
                 ", userEtc='" + userEtc + '\'' +
-                ", userRole='" + userRole + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }

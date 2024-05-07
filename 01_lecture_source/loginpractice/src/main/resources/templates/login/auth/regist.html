@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/auth/regist}" th:method="post" id="registForm">
+        <label th:for="userId" class="form-label">ID</label>
+        <input type="text" name="userId" required><br>
+        <label th:for="userPwd" class="form-label">Password</label>
+        <input type="password" name="userPwd" required><br>
+        <label th:for="userName" class="form-label">이름</label>
+        <input type="text" name="userName" required><br>
+        <label th:for="role" class="form-label">권한</label>
+        <select name="role" required>
+            <option value="대표">대표</option>
+            <option value="직원">직원</option>
+        </select><br>
+        <button type="submit">회원가입</button>
+    </form>
+</body>
+</html>
