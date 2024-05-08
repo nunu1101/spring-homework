@@ -1,6 +1,7 @@
 package com.willingtogohome.gymga.login.auth.model.service;
 
 import com.willingtogohome.gymga.login.auth.model.AuthDetails;
+import com.willingtogohome.gymga.login.config.SecurityConfig;
 import com.willingtogohome.gymga.login.user.model.dto.LoginDTO;
 import com.willingtogohome.gymga.login.user.model.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,6 @@ public class AuthService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
-        System.out.println("loadUserByUsername"+userId);
         LoginDTO login = userService.findByUserId(userId);
         System.out.println("loadUserByUsername" + login.getUserId());
 

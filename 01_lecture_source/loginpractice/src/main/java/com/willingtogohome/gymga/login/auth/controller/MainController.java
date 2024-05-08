@@ -17,18 +17,20 @@ public class MainController {
 
     @GetMapping(value = "/login")
     public String loginPage(){
-        return "login";
+        return "/login";
     }
 
-    @PostMapping(value = "/login")
-    public String loginPost(@ModelAttribute LoginDTO loginDTO){
-        List<String> role = loginDTO.getRole();
 
-        if (ADMIN.equals(role)){
-            return "redirect:/login/admin/admin";
-        } else {
-            return "redirect:/login/user/user";
-        }
+
+
+    @GetMapping("/admin/page")
+    public String adminPage() {
+        return "/login/admin/admin";
+    }
+
+    @GetMapping("/user/page")
+    public String userPage() {
+        return "/login/user/user";
     }
 
 

@@ -15,25 +15,19 @@
     <insert id="regist" parameterType="com.willingtogohome.gymga.login.user.model.dto.RegistDTO">
         INSERT INTO USERDB
         (
-        USER_ID
+            USER_ID
         ,   USER_PWD
         ,   USER_NAME
         ,   USER_PHONE
-        ,   USER_BIRTH
-        ,   USER_ADDRESS
-        ,   USER_ETC
         ,   USER_ROLE
         )
         VALUES
         (
-        #{ userId }
-        ,   #{ userPwd }
-        ,   #{ userName }
-        ,   #{ userPhone }
-        ,   #{ userBirth }
-        ,   #{ userAddress }
-        ,   #{ userEtc }
-        ,   #{ role }
+            #{userId}
+        ,   #{userPwd}
+        ,   #{userName}
+        ,   #{userPhone}
+        ,   #{role}
         )
     </insert>
     
@@ -45,6 +39,6 @@
             ,   USER_NAME
             ,   USER_ROLE
         FROM    USERDB
-        WHERE USER_ID = #{ userId }
+        WHERE USER_ID = #{userId}
     </select>
 </mapper>

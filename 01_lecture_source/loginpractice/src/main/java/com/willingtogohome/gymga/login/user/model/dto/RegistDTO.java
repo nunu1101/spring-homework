@@ -1,31 +1,29 @@
 package com.willingtogohome.gymga.login.user.model.dto;
 
+import lombok.*;
+
+
+
 public class RegistDTO {
 
     private String userId;
     private String userPwd;
     private String userName;
     private String userPhone;
-    private String userBirth;
-    private String userAddress;
-    private String userEtc;
     private String role;
 
     public RegistDTO(){}
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public RegistDTO(String userId, String userPwd, String userName, String userPhone, String userBirth, String userAddress, String userEtc, String role) {
+    public RegistDTO(String userId, String userPwd, String userName, String userPhone, String role) {
         this.userId = userId;
         this.userPwd = userPwd;
         this.userName = userName;
         this.userPhone = userPhone;
-        this.userBirth = userBirth;
-        this.userAddress = userAddress;
-        this.userEtc = userEtc;
         this.role = role;
+    }
+
+    public String getUserId() {
+        return userId;
     }
 
     public void setUserId(String userId) {
@@ -56,30 +54,6 @@ public class RegistDTO {
         this.userPhone = userPhone;
     }
 
-    public String getUserBirth() {
-        return userBirth;
-    }
-
-    public void setUserBirth(String userBirth) {
-        this.userBirth = userBirth;
-    }
-
-    public String getUserAddress() {
-        return userAddress;
-    }
-
-    public void setUserAddress(String userAddress) {
-        this.userAddress = userAddress;
-    }
-
-    public String getUserEtc() {
-        return userEtc;
-    }
-
-    public void setUserEtc(String userEtc) {
-        this.userEtc = userEtc;
-    }
-
     public String getRole() {
         return role;
     }
@@ -95,10 +69,8 @@ public class RegistDTO {
                 ", userPwd='" + userPwd + '\'' +
                 ", userName='" + userName + '\'' +
                 ", userPhone='" + userPhone + '\'' +
-                ", userBirth='" + userBirth + '\'' +
-                ", userAddress='" + userAddress + '\'' +
-                ", userEtc='" + userEtc + '\'' +
                 ", role='" + role + '\'' +
                 '}';
     }
 }
+

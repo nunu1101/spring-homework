@@ -18,27 +18,25 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public int regist(RegistDTO registDTO) {
+   public int regist(RegistDTO registDTO) {
 
-        registDTO.setUserPwd(passwordEncoder.encode(registDTO.getUserPwd()));
+       registDTO.setUserPwd(passwordEncoder.encode(registDTO.getUserPwd()));
 
-        int result = 0;
+       int result = 0;
 
-        try {
-            result = userMapper.regist(registDTO);
-        } catch (Exception e) {
-            e.printStackTrace();;
-        }
-
-        return result;
-    }
+       try {
+       result = userMapper.regist(registDTO);
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+       return result;
+   }
 
     public LoginDTO findByUserId(String userId) {
-        System.out.println("userId" + userId);
-        System.out.println("userMapper" + userMapper);
+
         LoginDTO login = userMapper.findByUserId(userId);
 
-        if (!Objects.isNull(login)) {
+        if(!Objects.isNull(login)) {
             return login;
         } else {
             return null;

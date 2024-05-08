@@ -1,11 +1,13 @@
 package com.willingtogohome.gymga.login.auth.model;
 
+import com.willingtogohome.gymga.login.common.UserRole;
 import com.willingtogohome.gymga.login.user.model.dto.LoginDTO;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class AuthDetails implements UserDetails {
 
@@ -25,12 +27,10 @@ public class AuthDetails implements UserDetails {
         this.loginDTO = loginDTO;
     }
 
-
     /* 권한 정보를 반환하는 메소드이다.
      * UsernamePasswordAuthenticationToken에 사용자의 권한 정보를 넣을 때 사용한다. */
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-
         Collection<GrantedAuthority> authorities = new ArrayList<>();
         loginDTO.getRole().forEach(role -> authorities.add(() -> role));
         return authorities;
